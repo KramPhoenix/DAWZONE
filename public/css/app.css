@@ -10933,3 +10933,50 @@ a.text-dark:focus {
   }
 }
 
+#layout-nav {
+  background-color: #2B718C;
+}
+
+#layout-nav .container {
+  max-width: unset !important;
+}
+
+#layout-nav #layout-search {
+  max-width: 650px;
+}
+
+#layout-nav #layout-brand {
+  color: #FFFBFB;
+  font-family: Owsald, sans-serif;
+  font-size: 39px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #070707;
+}
+
+#layout-nav #layout-nav-menu a {
+  color: #FFFBFB;
+  font-family: Owsald, sans-serif;
+}
+
+#layout-nav2 {
+  background-color: #69A7BF;
+}
+
+#layout-nav2 ul {
+  width: 100%;
+  margin-bottom: unset;
+}
+
+#layout-nav2 ul li {
+  list-style: none;
+}
+
+#layout-nav2 ul li a,
+#layout-nav2 ul li button {
+  color: #070707;
+  font-family: Owsald, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+

@@ -1,0 +1,49 @@
+#layout-nav{
+    background-color: #2B718C;
+
+    .container{
+        max-width: unset !important;
+    }
+
+    #layout-search{
+        max-width: 650px;
+    }
+
+    #layout-brand{
+        color: #FFFBFB;
+        font-family: Owsald, sans-serif;
+        font-size: 39px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 0 #070707;
+    }
+
+    #layout-nav-menu{
+        a{
+            color: #FFFBFB;
+            font-family: Owsald, sans-serif;
+        }
+    }
+}
+
+#layout-nav2{
+    background-color: #69A7BF;
+
+    ul{
+        width: 100%;
+        margin-bottom: unset;
+        li{
+            list-style: none;
+            a, button{
+                color: #070707;
+                font-family: Owsald, sans-serif;
+                font-weight: bold;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+
