@@ -96,11 +96,11 @@
                         </li>
 
                         <li class="nav-item collapse multi-collapse ml-4" id="collapse1">
-                            <a class="nav-link" href="">CATEGORÍAS</a>
+                            <a class="nav-link" href="{{ route('admin.categories.index') }}">CATEGORÍAS</a>
                         </li>
 
                         <li class="nav-item collapse multi-collapse ml-4" id="collapse3">
-                            <a class="nav-link" href="">MARCAS</a>
+                            <a class="nav-link" href=" {{ route('admin.brands.index') }} ">MARCAS</a>
                         </li>
 
                         <li class="nav-item active">
