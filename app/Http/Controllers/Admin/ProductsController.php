@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -19,7 +21,13 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('admin.products.create');
+        $brands = Brand::all();
+        $categories = Category::all();
+
+        return view('admin.products.create', [
+            'brands' => $brands,
+            'categories' => $categories
+        ]);
     }
 
     public function store(Request $request)
@@ -42,7 +50,7 @@ class ProductsController extends Controller
         }
 
         $data = [
-            'title' => $input['nombre'],
+            'title' => $input['titulo'],
             'image'  => $input['imagen'],
             'description'  => $input['descripcion'],
             'last_price' => $input['precio'],

@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-    <form class="w-100 col-lg-10 mb-4 d-flex justify-content-center" enctype="multipart/form-data" action=" " method="post">
+    <form class="w-100 col-lg-10 mb-4 d-flex justify-content-center" enctype="multipart/form-data" action="{{ route('admin.products.store') }}" method="post">
         @method('post')
         @csrf
         <input type="hidden" name="_method" value="POST"/>
@@ -15,9 +15,19 @@
                     <label for="precio">Precio:</label><input class="form-control mb-4" placeholder="Precio del producto" name="precio" value="{{ old('precio') }}">
                     <label for="marca">Marca: </label><select class="form-control mb-4" name="marca">
                         <option selected disabled>Selecciona una marca...</option>
+
+                        @foreach($brands as $brand)
+                            <option value="{{ $brand->id }}"> {{$brand->name}} </option>
+                        @endforeach
+
                     </select>
                     <label for="categoria">Categoría: </label><select class="form-control mb-4" name="categoria">
                         <option selected disabled>Selecciona una categoría...</option>
+
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}"> {{$category->name}} </option>
+                        @endforeach
+
                     </select>
                 </div>
                 <div class="col-12 d-flex justify-content-end text-center mb-4">

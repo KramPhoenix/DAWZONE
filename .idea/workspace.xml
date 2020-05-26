@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c658731-a0e0-4d4b-8c79-bca2537654fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_24_185448_brands.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_185448_brands.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_24_185515_categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_185515_categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +165,7 @@
       <workItem from="1590198092855" duration="604000" />
       <workItem from="1590245349381" duration="10478000" />
       <workItem from="1590345443862" duration="8695000" />
-      <workItem from="1590426845289" duration="17301000" />
+      <workItem from="1590426845289" duration="19279000" />
     </task>
     <servers />
   </component>
