@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('province');
-            $table->integer('cc_number')->nullable();
+            $table->bigInteger('cc_number')->nullable();
             $table->bigInteger('role')->unsigned();
             $table->rememberToken();
             $table->timestamps();

@@ -20,3 +20,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 'role'])->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('home');
+
+    Route::resource('users', 'AdminUserController')->only([
+        'index', 'edit', 'update'
+    ]);
+
+    Route::get('/users/{id}/delete', 'AdminUserController@destroy')->name('users.destroy');
+
+
+    Route::resource('properties', 'AdminPropertyController')->only([
+        'index', 'show', 'edit', 'update'
+    ]);
+
+    Route::get('/properties/{id}/delete', 'AdminPropertyController@destroy')->name('properties.destroy');
+
+});
