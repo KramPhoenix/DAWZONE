@@ -26,6 +26,10 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 
 
     Route::get('/', 'HomeController@index')->name('home');
 
+    Route::resource('products', 'ProductsController')->only([
+        'index', 'show', 'create', 'store','edit', 'update'
+    ]);
+
     Route::resource('users', 'AdminUserController')->only([
         'index', 'edit', 'update'
     ]);
@@ -33,9 +37,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 
     Route::get('/users/{id}/delete', 'AdminUserController@destroy')->name('users.destroy');
 
 
-    Route::resource('properties', 'AdminPropertyController')->only([
-        'index', 'show', 'edit', 'update'
-    ]);
+
 
     Route::get('/properties/{id}/delete', 'AdminPropertyController@destroy')->name('properties.destroy');
 

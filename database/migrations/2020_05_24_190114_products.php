@@ -23,11 +23,13 @@ class Products extends Migration
             $table->bigInteger('brand_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('offer_id')->nullable()->unsigned();
+            $table->bigInteger('owner_id')->nullable()->unsigned();
             $table->timestamps();
 
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
