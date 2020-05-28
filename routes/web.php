@@ -26,6 +26,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 
 
     Route::get('/', 'HomeController@index')->name('home');
 
+    Route::resource('users', 'UsersController')->only(['index', 'show']);
     Route::resource('products', 'ProductsController')->except('show');
     Route::resource('brands', 'BrandsController')->except('show');
     Route::resource('categories', 'CategoriesController')->except('show');

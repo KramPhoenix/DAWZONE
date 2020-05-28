@@ -10,7 +10,7 @@
                 <div class="card-header">NUEVO PRODUCTO</div>
                 <div class="card-body">
                     <label for="titulo">Título:</label><input class="form-control mb-4" placeholder="Título del producto" name="titulo" value="{{ old('titulo') }}">
-                    <label for="imagen">Imagen:</label><input type="file" class="form-control-file mb-4" placeholder="Imagen del producto" name="imagen" value="">
+                    <label for="imagen">Imagen:</label><input type="file" class="form-control-file mb-4" name="imagen" value="">
                     <label for="descripcion">Descripción:</label><input class="form-control mb-4" placeholder="Descripción del producto" name="descripcion" value="{{ old('descripcion') }}">
                     <label for="precio">Precio:</label><input class="form-control mb-4" placeholder="Precio del producto" name="precio" value="{{ old('precio') }}">
                     <label for="marca">Marca: </label><select class="form-control mb-4" name="marca">

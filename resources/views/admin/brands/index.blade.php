@@ -2,8 +2,11 @@
 
 @section('content')
     <div class="col-lg-10 d-flex flex-column justify-content-center align-items-center">
-        <a href=" {{ route('admin.brands.create') }}" class="btn btn-primary mb-4"><span><strong>CREAR UNA NUEVA MARCA</strong></span></a>
-        <table class="table col-lg-8">
+        <div class="w-100 d-flex justify-content-between">
+            <h2>LISTADO DE MARCAS</h2>
+            <a href=" {{ route('admin.brands.create') }}" class="btn btn-primary mb-4"><span><strong>CREAR UNA NUEVA MARCA</strong></span></a>
+        </div>
+        <table class="table col-lg-12">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -17,11 +20,11 @@
                         <td>{{ $brand->id }}</td>
                         <td>{{ $brand->name }}</td>
                         <td class="d-flex">
-                            <a href="{{ route('admin.brands.edit' , $brand->id) }}" class="btn btn-primary a-btn-slide-text mr-2">
+                            <a href="{{ route('admin.products.edit' , $brand->id) }}" class="btn btn-primary a-btn-slide-text mr-2">
                                 <i class="fas fa-edit"></i>
                             </a>
 
-                            <form action="{{ route('admin.brands.destroy' , $brand->id) }}" method="POST">
+                            <form action="{{ route('admin.products.destroy' , $brand->id) }}" method="POST">
                                 @method('post')
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">

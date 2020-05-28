@@ -1,7 +1,12 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-    <div class="col-lg-10 d-flex flex-column justify-content-center"><a href=" {{ route('admin.products.create') }}" class="btn btn-primary"><span><strong>CREAR UN NUEVO PRODUCTO</strong></span></a>
+    <div class="col-lg-10 d-flex flex-column justify-content-center align-items-center">
+        <div class="w-100 d-flex justify-content-between">
+            <h2>LISTADO DE PRODUCTOS</h2>
+            <a href=" {{ route('admin.products.create') }}" class="btn btn-primary mb-4"><span><strong>CREAR UN NUEVO PRODUCTO</strong></span></a>
+        </div>
+
         <table class="table col-lg-12">
             <thead>
             <tr>
@@ -27,11 +32,11 @@
                         <td>{{ $product->category_id }}</td>
 
                         <td class="d-flex">
-                            <a href="{{ route('admin.brands.edit' , $product->id) }}" class="btn btn-primary a-btn-slide-text mr-2">
+                            <a href="{{ route('admin.products.edit' , $product->id) }}" class="btn btn-primary a-btn-slide-text mr-2">
                                 <i class="fas fa-edit"></i>
                             </a>
 
-                            <form action="{{ route('admin.brands.destroy' , $product->id) }}" method="POST">
+                            <form action="{{ route('admin.products.destroy' , $product->id) }}" method="POST">
                                 @method('post')
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">

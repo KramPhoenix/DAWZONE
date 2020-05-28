@@ -2,8 +2,11 @@
 
 @section('content')
     <div class="col-lg-10 d-flex flex-column justify-content-center align-items-center">
-        <a href=" {{ route('admin.categories.create') }}" class="btn btn-primary mb-4"><span><strong>CREAR UNA NUEVA CATEGORÍA</strong></span></a>
-        <table class="table col-lg-8">
+        <div class="w-100 d-flex justify-content-between">
+            <h2>LISTADO DE CATEGORÍAS</h2>
+            <a href=" {{ route('admin.categories.create') }}" class="btn btn-primary mb-4"><span><strong>CREAR UNA NUEVA CATEGORÍA</strong></span></a>
+        </div>
+        <table class="table col-lg-12">
             <thead>
             <tr>
                 <th scope="col">ID</th>

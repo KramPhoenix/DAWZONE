@@ -85,8 +85,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto d-flex flex-column">
                         <li class="nav-item active">
-                            <a class="nav-link" href=""><i class="fas fa-user-tag"></i> CLIENTES</a>
+                            <a class="nav-link" href=" {{ route('admin.users.index') }} "><i class="fas fa-user-tag"></i> CLIENTES</a>
                         </li>
+
                         <li class="nav-item active">
                             <a class="nav-link" href="" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapse1 collapse2" ><i class="fas fa-cart-plus"></i> PRODUCTOS  <i class="fas fa-caret-down"></i></a>
                         </li>
@@ -104,7 +105,15 @@
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="">MARCAS</a>
+                            <a class="nav-link" href=""><i class="fas fa-tags"></i> OFERTAS</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href=""><i class="fas fa-newspaper"></i> NOTÍCIAS</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href=""><i class="fas fa-question"></i> FAQS</a>
                         </li>
 
                     </ul>
