@@ -10980,3 +10980,8 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
+section#category a {
+  color: #070707;
+  text-decoration: none;
+}
+

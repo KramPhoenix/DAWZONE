@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-    <div class="col-lg-10 d-flex flex-column justify-content-center align-items-center">
+    <div class="col-lg-10 d-flex flex-column align-items-center">
         <div class="w-100 d-flex justify-content-between">
             <h2>LISTADO DE CATEGORÍAS</h2>
             <a href=" {{ route('admin.categories.create') }}" class="btn btn-primary mb-4"><span><strong>CREAR UNA NUEVA CATEGORÍA</strong></span></a>

@@ -91,9 +91,10 @@
                                 Categorías
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                @php $categories = \App\Models\Category::all() @endphp
+                                @foreach($categories as $category)
+                                    <a class="dropdown-item" href="{{ route('categories.show' , $category->id) }}">{{ $category->name }}</a>
+                                @endforeach
                             </div>
                         </div></li>
                 <li><a href="">Notícias</a></li>
