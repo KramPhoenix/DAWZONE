@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cart}', 'CartController@index')->name('cart');
+Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('product.addToCart');
+Route::get('/reduce-one-from-cart/{id}', 'CartController@reduceOneFromCart')->name('product.reduceOneFromCart');
+Route::get('/remove-from-cart/{id}', 'CartController@removeFromCart')->name('product.removeFromCart');
+
 
 Route::resource('categories', 'CategoriesController');
 

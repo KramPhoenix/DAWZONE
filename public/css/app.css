@@ -10959,6 +10959,10 @@ a.text-dark:focus {
   font-family: Owsald, sans-serif;
 }
 
+#layout-nav #layout-nav-menu .dropdown-item {
+  color: #070707;
+}
+
 #layout-nav2 {
   background-color: #69A7BF;
 }
@@ -10983,5 +10987,9 @@ a.text-dark:focus {
 section#category a {
   color: #070707;
   text-decoration: none;
+}
+
+section#product .product-data del {
+  color: #C4C4C4;
 }
 
