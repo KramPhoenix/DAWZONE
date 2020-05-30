@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -105,11 +105,11 @@
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href=""><i class="fas fa-tags"></i> OFERTAS</a>
+                            <a class="nav-link" href=" {{ route('admin.offers.index') }} "><i class="fas fa-tags"></i> OFERTAS</a>
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href=""><i class="fas fa-newspaper"></i> NOTÍCIAS</a>
+                            <a class="nav-link" href=" {{ route('admin.news.index') }} "><i class="fas fa-newspaper"></i> NOTÍCIAS</a>
                         </li>
 
                         <li class="nav-item active">
