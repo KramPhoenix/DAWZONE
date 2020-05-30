@@ -24,8 +24,9 @@ Route::get('/remove-from-cart/{id}', 'CartController@removeFromCart')->name('pro
 
 
 Route::resource('categories', 'CategoriesController');
-
 Route::resource('products', 'ProductsController');
+
+Route::get('/offers', 'ProductsController@offers')->name('offers');
 
 Auth::routes();
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Offer;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -69,26 +70,52 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $brands = Brand::all();
         $categories = Category::all();
+        $offers = Offer::all();
 
         return view('admin.products.edit', [
             'product' => $product,
             'brands' => $brands,
-            'categories' => $categories
+            'categories' => $categories,
+            'offers' => $offers
         ]);
     }
 
     public function update($id, Request $request)
     {
         $product = Product::find($id);
-        $product->update(['last_price' => $product->price]);
+
+        if ($request['precio'] != $product->price) {
+            $product->update(['last_price' => $product->price]);
+        }
 
         $input = $request->validate([
             'titulo' => 'required',
             'descripcion' => 'required',
             'precio' => 'required',
             'marca' => 'required',
-            'categoria' => 'required'
+            'categoria' => 'required',
         ]);
+
+
+        if($request['oferta'] != -1 && $request['oferta'] != $product->offer_id){
+            $offer = Offer::find($request['oferta']);
+
+            if ($offer->value_discount != null) {
+                $input['precio'] = $input['precio'] - $offer->value_discount;
+            } else {
+                $discount = ($input['precio'] * $offer->percentage_discount) / 100;
+                $input['precio'] = $input['precio'] - $discount;
+            }
+
+        }
+
+        if($request['oferta'] == -1){
+            $request['oferta'] = null;
+
+            if ($input['precio'] == $product->price){
+                $input['precio'] = $product->last_price;
+            }
+        }
 
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
@@ -102,7 +129,8 @@ class ProductsController extends Controller
                 'description'  => $input['descripcion'],
                 'price'  => $input['precio'],
                 'brand_id' => $input['marca'],
-                'category_id' => $input['categoria']
+                'category_id' => $input['categoria'],
+                'offer_id' => $request['oferta']
             ];
 
         } else {
@@ -111,7 +139,8 @@ class ProductsController extends Controller
                 'description'  => $input['descripcion'],
                 'price'  => $input['precio'],
                 'brand_id' => $input['marca'],
-                'category_id' => $input['categoria']
+                'category_id' => $input['categoria'],
+                'offer_id' => $request['oferta']
             ];
         }
 

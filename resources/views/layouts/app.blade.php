@@ -106,7 +106,7 @@
                         </div></li>
                 <li><a href="">Notícias</a></li>
                 <li><a href="">Lo más vendido</a></li>
-                <li><a href="">Ofertas</a></li>
+                <li><a href="{{ route('offers') }}">Ofertas</a></li>
                 <li><a href="">FAQS</a></li>
                 <li><a href="">Contacto</a></li>
             </ul>

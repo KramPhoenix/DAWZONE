@@ -20,6 +20,14 @@ class ProductsController extends Controller
         ]);
     }
 
+    public function offers(){
+        $products = Product::where('offer_id', '!=', null)->get();
+
+        return view('offers', [
+            'products' => $products,
+        ]);
+    }
+
     public function addToFavourite($product, $user){
 
     }

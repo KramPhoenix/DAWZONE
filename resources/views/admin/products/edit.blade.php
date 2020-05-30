@@ -27,6 +27,15 @@
                         @endforeach
 
                     </select>
+
+                    <label for="oferta">Oferta: </label><select class="form-control mb-4" name="oferta">
+                        <option value="-1">SIN OFERTA</option>
+                        @foreach($offers as $offer)
+                            <option value="{{ $offer->id }}" @if( $offer->id == $product->offer_id) selected @endif> {{$offer->name}} - @if($offer->value_discount != null) {{$offer->value_discount}} EUR @else {{$offer->percentage_discount}} % @endif  </option>
+                        @endforeach
+
+                    </select>
+
                 </div>
                 <div class="col-12 d-flex justify-content-end text-center mb-4">
                     <a href="{{ route('admin.products.index') }}"><div class="btn btn-outline-danger mx-1">Cancelar</div></a>
