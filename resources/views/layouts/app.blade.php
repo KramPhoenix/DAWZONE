@@ -80,7 +80,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href=" {{ route('products.index') }} ">
                                         Mis Productos
                                     </a>
 
@@ -118,7 +118,7 @@
                 <li><a href="">FAQS</a></li>
                 <li><a href="">Contacto</a></li>
                 @if(Auth::check())
-                    <li><a href=""><button class="btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>
+                    <li><a href=" {{ route('products.create') }} "><button class="btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>
                 @endif
             </ul>
         </nav>
