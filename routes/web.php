@@ -28,6 +28,7 @@ Route::resource('categories', 'CategoriesController');
 Route::resource('products', 'ProductsController');
 Route::resource('orders', 'OrdersController');
 
+Route::get('/my-orders', 'OrdersController@myOrders')->name('orders.myOrders');
 Route::get('/offers', 'ProductsController@offers')->name('offers');
 
 Auth::routes();

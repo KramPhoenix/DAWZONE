@@ -72,7 +72,7 @@ class NewsController extends Controller
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
-            $imagen->move(public_path() . '/img/products/' , $nombreImagen);
+            $imagen->move(public_path() . '/img/news/' , $nombreImagen);
             $input['imagen'] = $nombreImagen;
 
             $data = [
@@ -90,7 +90,7 @@ class NewsController extends Controller
             ];
         }
 
-       
+
         $news->update($data);
         return redirect()->route('admin.news.index');
     }

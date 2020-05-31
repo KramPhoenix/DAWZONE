@@ -64,7 +64,7 @@ class OrdersController extends Controller
         }
 
         Session::forget('cart');
-        return redirect()->route('cart');
+        return redirect()->route('orders.myOrders');
     }
 
     public function update($id, Request $request)
@@ -89,6 +89,35 @@ class OrdersController extends Controller
         $user->update($data);
 
         return redirect()->route('orders.index');
+    }
+
+    public function myOrders()
+    {
+        $user = auth()->user();
+        $orders = Order::where('user_id', '=', $user->id)->get();
+
+        return view('my_orders', [
+            'orders' => $orders
+        ]);
+    }
+
+    public function show($id)
+    {
+        $order_products = OrderProduct::where('order_id', '=', $id)->get();
+
+        return view('my_order_products', [
+            'order' => $id,
+            'order_products' => $order_products
+        ]);
+    }
+
+    public function destroy($id)
+    {
+        $order = Order::destroy($id);
+
+        $order_products = OrderProduct::where('order_id', '=', $id)->delete();
+
+        return redirect()->route('orders.myOrders');
     }
 
 }

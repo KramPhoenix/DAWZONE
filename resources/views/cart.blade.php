@@ -48,16 +48,18 @@
                         </tbody>
                     </table>
 
-                    <p>Total Price: {{ $total_price }}</p>
-
-                    <a href="{{ route('orders.index') }}"><button class="btn-info">SIGUIENTE</button></a>
+                    <div class="d-flex flex-column align-items-end">
+                        <p><strong class="text-muted">Cantidad Productos: {{ $total_quantity }}</strong></p>
+                        <p><strong class="text-muted">Precio Total: {{ $total_price }} EUR</strong></p>
+                        <a href="{{ route('orders.index') }}"><button class="btn btn-dark rounded-pill">SIGUIENTE</button></a>
+                    </div>
 
                 </div>
                 <!-- End -->
             </div>
         </div>
     @else
-        <div class="col-lg-12 d-flex justify-content-center">
+        <div class="col-lg-12 d-flex justify-content-center mt-4">
             <div class="col-lg-8 alert-info p-4">
                 <strong>No hay productos añadidos al carrito actualmente!</strong>
             </div>
