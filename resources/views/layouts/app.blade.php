@@ -93,6 +93,7 @@
 
         <nav id="layout-nav2" class="navbar navbar-expand-md navbar-light shadow-sm">
             <ul class="d-flex justify-content-around align-items-center">
+
                 <li><div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Categorías
@@ -104,15 +105,17 @@
                                 @endforeach
                             </div>
                         </div></li>
-                <li><a href="">Notícias</a></li>
-                <li><a href="">Lo más vendido</a></li>
+                <li><a href="{{ route('news') }}">Notícias</a></li>
                 <li><a href="{{ route('offers') }}">Ofertas</a></li>
                 <li><a href="">FAQS</a></li>
                 <li><a href="">Contacto</a></li>
+                @if(Auth::check())
+                    <li><a href=""><button class="btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>
+                @endif
             </ul>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
 

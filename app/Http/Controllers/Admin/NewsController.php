@@ -26,15 +26,25 @@ class NewsController extends Controller
     {
         $input = $request->validate([
             'titulo' => 'required|string|max:255',
+            'imagen' => 'required',
             'descripcion' => 'required|string|max:1000',
             'url' => 'required|string|max:255'
         ]);
 
+        if ($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $nombreImagen = time().$imagen->getClientOriginalName();
+            $imagen->move(public_path() . '/img/news/' , $nombreImagen);
+            $input['imagen'] = $nombreImagen;
+        }
+
         $data = [
+            'image' => $input['imagen'],
             'title' => $input['titulo'],
             'description' => $input['descripcion'],
             'link' => $input['url'],
         ];
+
 
         $news = News::create($data);
 
@@ -59,12 +69,28 @@ class NewsController extends Controller
             'url' => 'required|string|max:255'
         ]);
 
-        $data = [
-            'title' => $input['titulo'],
-            'description' => $input['descripcion'],
-            'link' => $input['url'],
-        ];
+        if ($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $nombreImagen = time().$imagen->getClientOriginalName();
+            $imagen->move(public_path() . '/img/products/' , $nombreImagen);
+            $input['imagen'] = $nombreImagen;
 
+            $data = [
+                'image' => $input['imagen'],
+                'title' => $input['titulo'],
+                'description' => $input['descripcion'],
+                'link' => $input['url'],
+            ];
+
+        } else {
+            $data = [
+                'title' => $input['titulo'],
+                'description' => $input['descripcion'],
+                'link' => $input['url'],
+            ];
+        }
+
+       
         $news->update($data);
         return redirect()->route('admin.news.index');
     }
