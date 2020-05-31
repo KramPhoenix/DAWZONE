@@ -49,6 +49,9 @@
                     </table>
 
                     <p>Total Price: {{ $total_price }}</p>
+
+                    <a href="{{ route('orders.index') }}"><button class="btn-info">SIGUIENTE</button></a>
+
                 </div>
                 <!-- End -->
             </div>

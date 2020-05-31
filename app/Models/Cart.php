@@ -5,8 +5,8 @@ namespace App\Models;
 class Cart
 {
     public $products = null;
-    public $total_quantity = 0.00;
-    public $total_price = 0;
+    public $total_quantity = 0;
+    public $total_price = 0.00;
 
     public function __construct($oldCart)
     {
