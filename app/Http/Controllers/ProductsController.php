@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\User;
 use App\Models\UserProductFilter;
 use Illuminate\Http\Request;
 
@@ -24,15 +25,22 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
+        $product_owner = User::find($product->owner_id);
 
         $product_brand = Brand::find($product->brand_id);
 
+        $user = auth()->user();
+
         $valuations = UserProductFilter::where('product_id', '=', $id)->get();
+
+        $favourite = UserProductFilter::where('product_id', '=', $id)->where('user_id', '=', $user->id)->first();
 
         return view('product', [
             'product' => $product,
+            'product_owner' => $product_owner,
             'product_brand' => $product_brand,
-            'valuations' => $valuations
+            'valuations' => $valuations,
+            'favourite' => $favourite
         ]);
     }
 

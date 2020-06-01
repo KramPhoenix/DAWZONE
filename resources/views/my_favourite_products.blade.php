@@ -7,7 +7,7 @@
             <div class="card mb-4">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="/img/products/{{$item->image}}" class="w-100">
+                        <img width="350px" height="350px" src="/img/products/{{$item->image}}" class="w-100">
                     </div>
                     <div class="col-md-8 px-3 p-3">
                         <div class="card-block px-3">

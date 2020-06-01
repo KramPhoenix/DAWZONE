@@ -16,11 +16,12 @@
                     @php $brand = \App\Models\Brand::find($product->brand_id)@endphp
                     <p class="card-subtitle">de {{ $brand->name }}</p>
                     <p class="card-text">@if($product->last_price > $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</p>
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex @if($product->offer_id == null) justify-content-center @else justify-content-around @endif mt-2">
                     @if($product->offer_id != null)
                         @php $offer = \App\Models\Offer::find($product->offer_id)@endphp
                         <button class="bg-transparent">@if($offer->value_discount != null) {{ $offer->value_discount }}€ DESC @else {{$offer->percentage_discount}}% DESC @endif</button>
                     @endif
+                        <a href=" {{ route('product.addToCart', $product->id) }} " class="align-self-center"><button class="bg-transparent"><i class="fas fa-shopping-cart"></i> <i class="fas fa-plus"></i></button></a>
                     </div>
                 </div>
                 </div>

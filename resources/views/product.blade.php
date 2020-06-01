@@ -10,14 +10,23 @@
             <div class="col-lg-6 product-data p-4">
                 <h2>{{ $product->title }}</h2>
                 <h6>{{ $product_brand->name }}</h6>
-                <a href=" {{ route('product.addToFavourite', $product->id) }} "><p><i class="fas fa-star"></i> Añadir a Favoritos</p></a>
+                @if($favourite == null || $favourite->favourite == 0)
+                    <a href=" {{ route('product.addToFavourite', $product->id) }} "><p><i class="fas fa-star"></i> Añadir a Favoritos</p></a>
+                @else
+                    <p><i class="fas fa-star"></i> Añadido a Mis Favoritos</p>
+                @endif
                 <p> {{ $product->description }}</p>
                 <h4>@if($product->last_price > $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</h4>
                 @if($product->offer_id != null)
                     @php $offer = \App\Models\Offer::find($product->offer_id)@endphp
                     <button class="bg-transparent">@if($offer->value_discount != null) {{ $offer->value_discount }}€ DESC @else {{$offer->percentage_discount}}% DESC @endif</button>
                 @endif
-                <div class="buttons mt-5 d-flex">
+
+                @if($product_owner != null)
+                <p class="btn btn-light rounded-pill"><i class="fas fa-user"></i> {{ $product_owner->name }} {{ $product_owner->surname }}</p>
+                @endif
+
+                <div class="buttons mt-4 d-flex">
                     <a href="@if(Auth::check()) {{ route('product.addToCart', $product->id) }} @else {{ route('login') }} @endif"><button class="btn-dark p-2 mr-4">AÑADIR AL CARRITO</button></a>
                     <a href="@if(Auth::check()) {{ route('product.buyNow', $product->id) }} @else {{ route('login') }} @endif"><button class="btn-dark p-2">COMPRAR AHORA</button></a>
                 </div>
