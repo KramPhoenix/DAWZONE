@@ -16,7 +16,7 @@
                             <p class="card-text">{{ $product->description }}</p>
                             <h4>@if($product->last_price > $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</h4>
 
-                            <div class="buttons mt-5 d-flex">
+                            <div class="buttons mt-4 d-flex">
                                 <a href=" {{ route('products.edit', $product->id) }} "><button class="btn-dark p-2 mr-4"><i class="fas fa-edit"></i> EDITAR</button></a>
                                 <form action="{{ route('products.destroy' , $product->id) }}" method="POST">
                                     @method('post')

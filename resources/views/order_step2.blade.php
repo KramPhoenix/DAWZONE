@@ -9,13 +9,13 @@
                 @csrf
                 <input type="hidden" name="_method" value="PATCH"/>
                 <div class="form-group">
-                    <label class="font-weight-bold" for="direccion">Nº de Tarjeta de Crédito: </label>
-                    <input type="text" id="direccion" name="direccion" class="form-control" value="{{ $user->cc_number }}">
+                    <label class="font-weight-bold" for="tarjeta">Nº de Tarjeta de Crédito: </label>
+                    <input type="text" id="tarjeta" name="tarjeta" class="form-control" value="{{ $user->cc_number }}">
                 </div>
 
                 <div class="form-group">
-                    <label class="font-weight-bold" for="ciudad">Propietario de la Tarjeta de Crédito: </label>
-                    <input type="text" id="ciudad" name="ciudad" class="form-control" value="{{ $user->surname }}, {{ $user->name }}" disabled>
+                    <label class="font-weight-bold" for="propietario">Propietario de la Tarjeta de Crédito: </label>
+                    <input type="text" id="propietario" class="form-control" value="{{ $user->surname }}, {{ $user->name }}" disabled>
                 </div>
 
                 <div class="form-row">
@@ -31,9 +31,12 @@
                         <input type="text" class="form-control" id="cvv">
                     </div>
                 </div>
+                <div class="form-group d-flex justify-content-end">
+                    <input type="submit" name="submit" class="btn btn-success text-uppercase align-self-end" value="ACTUALIZAR TARJETA">
+                </div>
 
             </form>
-            <a href="{{ route('orders.storeOrder') }}"><button class="btn btn-dark rounded-pill py-2 btn-block text-uppercase">Realizar pago</button></a>
+            <a href="{{ route('order.storeOrder') }}"><button class="btn btn-dark rounded-pill py-2 btn-block text-uppercase">Realizar pago</button></a>
         </div>
     </div>
 @endsection

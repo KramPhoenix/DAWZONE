@@ -28,12 +28,16 @@ Route::resource('categories', 'CategoriesController');
 Route::resource('products', 'ProductsController');
 Route::get('/add-to-favourite/{id}', 'ProductsController@addToFavourite')->name('product.addToFavourite');
 Route::get('/offers', 'ProductsController@offers')->name('offers');
+Route::get('/favourite', 'ProductsController@favourite')->name('product.favourite');
+Route::put('/remove-favourite/{id}', 'ProductsController@removeFavourite')->name('product.removeFavourite');
 Route::get('/valuate/{id}', 'ProductsController@valuate')->name('product.valuate');
 Route::post('/add-valuation/{id}', 'ProductsController@addValuation')->name('product.addValuation');
 
 Route::resource('orders', 'OrdersController');
 Route::get('/my-orders', 'OrdersController@myOrders')->name('orders.myOrders');
-Route::get('/orders/finished', 'OrdersController@storeOrder')->name('orders.storeOrder');
+Route::get('/order/finished', 'OrdersController@storeOrder')->name('order.storeOrder');
+
+Route::resource('faqs', 'FaqsController')->only('index');
 
 Auth::routes();
 

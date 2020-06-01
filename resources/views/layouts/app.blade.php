@@ -84,7 +84,7 @@
                                         Mis Productos
                                     </a>
 
-                                    <a class="dropdown-item" href=" ">
+                                    <a class="dropdown-item" href=" {{ route('product.favourite') }} ">
                                         Mis Favoritos
                                     </a>
 
@@ -119,7 +119,7 @@
                         </div></li>
                 <li><a href="{{ route('news') }}">Notícias</a></li>
                 <li><a href="{{ route('offers') }}">Ofertas</a></li>
-                <li><a href="">FAQS</a></li>
+                <li><a href="{{ route('faqs.index') }}">FAQS</a></li>
                 <li><a href="">Contacto</a></li>
                 @if(Auth::check())
                     <li><a href=" {{ route('products.create') }} "><button class="btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>

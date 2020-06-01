@@ -26,14 +26,22 @@
 
         <div class="col-lg-10 bg-white p-4">
             <h4 class="mb-5"><u>Valoraciones del Producto</u></h4>
+            @if(count($valuations) == 0)
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="col-lg-8 alert-info p-4">
+                        <strong>No hay valoraciones en este producto actualmente!</strong>
+                    </div>
+                </div>
+            @else
                 @foreach($valuations as $valuation)
                     @php $user = \App\Models\User::find($valuation->user_id) @endphp
                     <div class="bg-light mb-4">
                         <p><strong><i class="fas fa-user"></i> {{ $user->name }} {{ $user->surname }}</strong> ({{ $valuation->created_at }})</p>
-                        <p>Valoración: <strong>{{ $valuation->stars }} <i class="fas fa-star"></i></strong></p>
-                        <p>Comentario: <em>"{{ $valuation->valuation }}"</em></p>
+                        <p>Valoración: <strong>@if($valuation->stars == null) Sin Valorar @endif {{ $valuation->stars }} <i class="fas fa-star"></i></strong></p>
+                        <p>Comentario: @if($valuation->stars == null) El usuario ha añadido el producto a favoritos. @else <em>"{{ $valuation->valuation }}"</em>@endif</p>
                     </div>
                 @endforeach
+            @endif
         </div>
     </section>
 

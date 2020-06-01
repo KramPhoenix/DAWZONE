@@ -43,7 +43,6 @@ class OrdersController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $user = auth()->user();
-
         $data = [
             'total_quantity' => $cart->total_quantity,
             'total_price' => $cart->total_price,
@@ -51,8 +50,6 @@ class OrdersController extends Controller
         ];
 
         $order = Order::create($data);
-
-
 
         foreach ($cart->products as $product){
             $order_products = OrderProduct::create([
@@ -71,24 +68,41 @@ class OrdersController extends Controller
     {
         $user = User::find($id);
 
-        $request->validate([
-            'direccion' => 'required',
-            'ciudad' => 'required',
-            'provincia' => 'required',
-            'telf' => 'required|numeric',
-        ]);
+        if ($request['tarjeta']){
+            $request->validate([
+                'tarjeta' => 'required|numeric'
+            ]);
+
+            $data = [
+                'cc_number' => $request['tarjeta'],
+            ];
+
+            $user->update($data);
+
+            return redirect()->route('orders.create');
+
+        } else {
+
+            $request->validate([
+                'direccion' => 'required',
+                'ciudad' => 'required',
+                'provincia' => 'required',
+                'telf' => 'required|numeric',
+            ]);
+
+            $data = [
+                'phone' => $request['telf'],
+                'address' => $request['direccion'],
+                'city' => $request['ciudad'],
+                'province' => $request['provincia'],
+            ];
+
+            $user->update($data);
+
+            return redirect()->route('orders.index');
+        }
 
 
-        $data = [
-            'phone' => $request['telf'],
-            'address' => $request['direccion'],
-            'city' => $request['ciudad'],
-            'province' => $request['provincia'],
-        ];
-
-        $user->update($data);
-
-        return redirect()->route('orders.index');
     }
 
     public function myOrders()

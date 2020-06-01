@@ -64,12 +64,11 @@ class ProductsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/products/' , $nombreImagen);
-            $request['imagen'] = $nombreImagen;
         }
 
         $data = [
             'title' => $request['titulo'],
-            'image'  => $request['imagen'],
+            'image'  => $nombreImagen,
             'description'  => $request['descripcion'],
             'last_price' => $request['precio'],
             'price'  => $request['precio'],
@@ -117,11 +116,10 @@ class ProductsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/products/' , $nombreImagen);
-            $request['imagen'] = $nombreImagen;
 
             $data = [
                 'title' => $request['titulo'],
-                'image'  => $request['imagen'],
+                'image'  => $nombreImagen,
                 'description'  => $request['descripcion'],
                 'price'  => $request['precio'],
                 'brand_id' => $request['marca'],
@@ -156,6 +154,28 @@ class ProductsController extends Controller
         ]);
     }
 
+    public function favourite()
+    {
+        $user = auth()->user();
+        $products = UserProductFilter::where('user_id', '=', $user->id)->where('favourite', '=', 1)->get();
+
+        return view('my_favourite_products', [
+            'products' => $products,
+        ]);
+    }
+
+    public function removeFavourite($id)
+    {
+        $user = auth()->user();
+        $products = UserProductFilter::where('user_id', '=', $user->id)->where('product_id', '=', $id)->first();
+
+        $data = [
+          'favourite' =>  0
+        ];
+
+        $products->update($data);
+        return redirect()->route('product.favourite');
+    }
 
     public function addToFavourite($id){
         $user = auth()->user();

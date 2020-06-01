@@ -35,11 +35,10 @@ class NewsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/news/' , $nombreImagen);
-            $request['imagen'] = $nombreImagen;
         }
 
         $data = [
-            'image' => $request['imagen'],
+            'image' => $nombreImagen,
             'title' => $request['titulo'],
             'description' => $request['descripcion'],
             'link' => $request['url'],
