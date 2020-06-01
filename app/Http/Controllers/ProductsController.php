@@ -80,6 +80,71 @@ class ProductsController extends Controller
         return redirect()->route('products.index');
     }
 
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        $brands = Brand::all();
+        $categories = Category::all();
+
+        return view('edit_product', [
+            'product' => $product,
+            'brands' => $brands,
+            'categories' => $categories
+        ]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $product = Product::find($id);
+
+        if ($request['precio'] != $product->price) {
+            $product->update(['last_price' => $product->price]);
+        }
+
+        $request->validate([
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'precio' => 'required',
+            'marca' => 'required',
+            'categoria' => 'required',
+        ]);
+
+
+        if ($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $nombreImagen = time().$imagen->getClientOriginalName();
+            $imagen->move(public_path() . '/img/products/' , $nombreImagen);
+            $request['imagen'] = $nombreImagen;
+
+            $data = [
+                'title' => $request['titulo'],
+                'image'  => $request['imagen'],
+                'description'  => $request['descripcion'],
+                'price'  => $request['precio'],
+                'brand_id' => $request['marca'],
+                'category_id' => $request['categoria'],
+            ];
+
+        } else {
+            $data = [
+                'title' => $request['titulo'],
+                'description'  => $request['descripcion'],
+                'price'  => $request['precio'],
+                'brand_id' => $request['marca'],
+                'category_id' => $request['categoria'],
+            ];
+        }
+
+        $product->update($data);
+        return redirect()->route('products.index');
+    }
+
+    public function destroy($id)
+    {
+        Product::destroy($id);
+        return redirect()->route('products.index');
+    }
+
     public function offers(){
         $products = Product::where('offer_id', '!=', null)->get();
 

@@ -12,7 +12,7 @@
                 <h6>{{ $product_brand->name }}</h6>
                 <a href=" {{ route('product.addToFavourite', $product->id) }} "><p><i class="fas fa-star"></i> Añadir a Favoritos</p></a>
                 <p> {{ $product->description }}</p>
-                <h4>@if($product->last_price != $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</h4>
+                <h4>@if($product->last_price > $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</h4>
                 @if($product->offer_id != null)
                     @php $offer = \App\Models\Offer::find($product->offer_id)@endphp
                     <button class="bg-transparent">@if($offer->value_discount != null) {{ $offer->value_discount }}€ DESC @else {{$offer->percentage_discount}}% DESC @endif</button>

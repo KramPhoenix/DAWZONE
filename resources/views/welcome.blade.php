@@ -44,7 +44,7 @@
                                 <h5 class="card-title">{{ $product->title }}</h5>
                                 @php $brand = \App\Models\Brand::find($product->brand_id)@endphp
                                 <p class="card-subtitle">de {{ $brand->name }}</p>
-                                <p class="card-text">@if($product->last_price != $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</p>
+                                <p class="card-text">@if($product->last_price > $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</p>
                                 <div class="d-flex justify-content-center">
                                 @if($product->offer_id != null)
                                     @php $offer = \App\Models\Offer::find($product->offer_id)@endphp
