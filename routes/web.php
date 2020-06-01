@@ -57,5 +57,6 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 
     Route::resource('categories', 'CategoriesController')->except('show');
     Route::resource('offers', 'OffersController')->except('show');
     Route::resource('faqs', 'FaqsController')->except('show');
+    Route::resource('orders', 'OrdersController')->only(['index', 'show']);
 
 });
