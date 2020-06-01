@@ -2,6 +2,14 @@
 
 @section('content')
     <div class="p-4">
+        @if(count($products) == 0)
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div class="col-lg-8 alert-info p-4">
+                    <strong>Actualmente no hay productos en la sección de favoritos!</strong>
+                </div>
+            </div>
+        @endif
+
         @foreach($products as $product)
             @php $item = \App\Models\Product::find($product->product_id)@endphp
             <div class="card mb-4">

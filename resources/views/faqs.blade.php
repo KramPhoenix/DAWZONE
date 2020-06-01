@@ -4,6 +4,13 @@
     <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
         <h3 class="ml-4 p-4"><u>Preguntas y respuestas frecuentes</u></h3>
         <div class="container">
+            @if(count($faqs) == 0)
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="col-lg-8 alert-info p-4">
+                        <strong>Actualmente no hay FAQS disponibles!</strong>
+                    </div>
+                </div>
+            @endif
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 @foreach($faqs as $faq)
                     <div class="panel panel-default bg-white mb-4">

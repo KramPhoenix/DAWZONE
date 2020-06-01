@@ -2,6 +2,14 @@
 
 @section('content')
     <section id="category" class="col-lg-12 d-flex flex-wrap justify-content-around mt-5">
+        @if(count($products) == 0)
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div class="col-lg-8 alert-info p-4">
+                    <strong>Actualmente no hay ofertas disponibles!</strong>
+                </div>
+            </div>
+        @endif
+
         @foreach($products as $product)
             <a href=" {{ route('products.show' , $product->id)}} ">
                 <div class="card mb-4 border-dark" style="width: 225px; height: 380px">

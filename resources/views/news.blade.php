@@ -2,6 +2,14 @@
 
 @section('content')
     <div id="noticias" class="p-4">
+        @if(count($news) == 0)
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div class="col-lg-8 alert-info p-4">
+                    <strong>Actualmente no hay notícias disponibles!</strong>
+                </div>
+            </div>
+        @endif
+
         @foreach($news as $new)
         <a href="{{ $new->link }}">
             <div class="card mb-4">

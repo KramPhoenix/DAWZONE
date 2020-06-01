@@ -35,6 +35,13 @@
                 <a href=" {{ route('offers') }} "><p class="mt-1 ml-2"><u>Ver todas</u></p></a>
             </div>
             <div class="row d-flex justify-content-around flex-wrap">
+                @if(count($products) == 0)
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <div class="col-lg-8 alert-info p-4">
+                            <strong>Actualmente no hay ofertas disponibles!</strong>
+                        </div>
+                    </div>
+                @endif
 
                 @foreach($products as $product)
                     <a href=" {{ route('products.show' , $product->id)}} ">
