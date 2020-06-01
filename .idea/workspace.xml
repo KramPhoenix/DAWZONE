@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c658731-a0e0-4d4b-8c79-bca2537654fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/my_favourite_products.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/contact_email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/faqs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/faqs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/my_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/my_products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/order_step2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/order_step2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +133,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/lotolibre-srv" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -178,7 +172,7 @@
       <workItem from="1590706318746" duration="29015000" />
       <workItem from="1590848436215" duration="1203000" />
       <workItem from="1590876894724" duration="24421000" />
-      <workItem from="1590965841061" duration="29292000" />
+      <workItem from="1590965841061" duration="30585000" />
     </task>
     <servers />
   </component>
@@ -190,14 +184,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="111" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1590358429969" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591007073285">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591023588212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1591007073285" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1590889665995">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1591023588212" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1591024338039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1590889665995" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1591024338039" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1590997597951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

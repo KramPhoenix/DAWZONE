@@ -120,7 +120,7 @@
                 <li><a href="{{ route('news') }}">Notícias</a></li>
                 <li><a href="{{ route('offers') }}">Ofertas</a></li>
                 <li><a href="{{ route('faqs.index') }}">FAQS</a></li>
-                <li><a href="">Contacto</a></li>
+                <li><a href="{{ route('contact.index') }}">Contacto</a></li>
                 @if(Auth::check())
                     <li><a href=" {{ route('products.create') }} "><button class="btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>
                 @endif

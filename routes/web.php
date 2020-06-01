@@ -38,6 +38,8 @@ Route::get('/my-orders', 'OrdersController@myOrders')->name('orders.myOrders');
 Route::get('/order/finished', 'OrdersController@storeOrder')->name('order.storeOrder');
 
 Route::resource('faqs', 'FaqsController')->only('index');
+Route::resource('contact', 'ContactController')->only('index');
+Route::post('/contact', 'ContactController@contactSend')->name('contactSend');
 
 Auth::routes();
 
