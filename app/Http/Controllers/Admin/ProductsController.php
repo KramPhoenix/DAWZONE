@@ -33,8 +33,7 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->all();
-        $input = $request->validate([
+        $request->validate([
             'titulo' => 'required',
             'imagen' => 'required',
             'descripcion' => 'required',
@@ -47,17 +46,17 @@ class ProductsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/products/' , $nombreImagen);
-            $input['imagen'] = $nombreImagen;
+            $request['imagen'] = $nombreImagen;
         }
 
         $data = [
-            'title' => $input['titulo'],
-            'image'  => $input['imagen'],
-            'description'  => $input['descripcion'],
-            'last_price' => $input['precio'],
-            'price'  => $input['precio'],
-            'brand_id' => $input['marca'],
-            'category_id' => $input['categoria']
+            'title' => $request['titulo'],
+            'image'  => $request['imagen'],
+            'description'  => $request['descripcion'],
+            'last_price' => $request['precio'],
+            'price'  => $request['precio'],
+            'brand_id' => $request['marca'],
+            'category_id' => $request['categoria']
         ];
 
         $product = Product::create($data);
@@ -88,7 +87,7 @@ class ProductsController extends Controller
             $product->update(['last_price' => $product->price]);
         }
 
-        $input = $request->validate([
+        $request->validate([
             'titulo' => 'required',
             'descripcion' => 'required',
             'precio' => 'required',
@@ -101,10 +100,10 @@ class ProductsController extends Controller
             $offer = Offer::find($request['oferta']);
 
             if ($offer->value_discount != null) {
-                $input['precio'] = $input['precio'] - $offer->value_discount;
+                $request['precio'] = $request['precio'] - $offer->value_discount;
             } else {
-                $discount = ($input['precio'] * $offer->percentage_discount) / 100;
-                $input['precio'] = $input['precio'] - $discount;
+                $discount = ($request['precio'] * $offer->percentage_discount) / 100;
+                $request['precio'] = $request['precio'] - $discount;
             }
 
         }
@@ -112,8 +111,8 @@ class ProductsController extends Controller
         if($request['oferta'] == -1){
             $request['oferta'] = null;
 
-            if ($input['precio'] == $product->price){
-                $input['precio'] = $product->last_price;
+            if ($request['precio'] == $product->price){
+                $request['precio'] = $product->last_price;
             }
         }
 
@@ -121,25 +120,25 @@ class ProductsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/products/' , $nombreImagen);
-            $input['imagen'] = $nombreImagen;
+            $request['imagen'] = $nombreImagen;
 
             $data = [
-                'title' => $input['titulo'],
-                'image'  => $input['imagen'],
-                'description'  => $input['descripcion'],
-                'price'  => $input['precio'],
-                'brand_id' => $input['marca'],
-                'category_id' => $input['categoria'],
+                'title' => $request['titulo'],
+                'image'  => $request['imagen'],
+                'description'  => $request['descripcion'],
+                'price'  => $request['precio'],
+                'brand_id' => $request['marca'],
+                'category_id' => $request['categoria'],
                 'offer_id' => $request['oferta']
             ];
 
         } else {
             $data = [
-                'title' => $input['titulo'],
-                'description'  => $input['descripcion'],
-                'price'  => $input['precio'],
-                'brand_id' => $input['marca'],
-                'category_id' => $input['categoria'],
+                'title' => $request['titulo'],
+                'description'  => $request['descripcion'],
+                'price'  => $request['precio'],
+                'brand_id' => $request['marca'],
+                'category_id' => $request['categoria'],
                 'offer_id' => $request['oferta']
             ];
         }

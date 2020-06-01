@@ -47,8 +47,7 @@ class ProductsController extends Controller
     {
         $user = auth()->user();
 
-        $input = $request->all();
-        $input = $request->validate([
+        $request->validate([
             'titulo' => 'required',
             'imagen' => 'required',
             'descripcion' => 'required',
@@ -61,17 +60,17 @@ class ProductsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/products/' , $nombreImagen);
-            $input['imagen'] = $nombreImagen;
+            $request['imagen'] = $nombreImagen;
         }
 
         $data = [
-            'title' => $input['titulo'],
-            'image'  => $input['imagen'],
-            'description'  => $input['descripcion'],
-            'last_price' => $input['precio'],
-            'price'  => $input['precio'],
-            'brand_id' => $input['marca'],
-            'category_id' => $input['categoria'],
+            'title' => $request['titulo'],
+            'image'  => $request['imagen'],
+            'description'  => $request['descripcion'],
+            'last_price' => $request['precio'],
+            'price'  => $request['precio'],
+            'brand_id' => $request['marca'],
+            'category_id' => $request['categoria'],
             'owner_id' => $user->id
         ];
 

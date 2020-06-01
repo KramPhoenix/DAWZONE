@@ -20,11 +20,11 @@
                         <td>{{ $brand->id }}</td>
                         <td>{{ $brand->name }}</td>
                         <td class="d-flex">
-                            <a href="{{ route('admin.products.edit' , $brand->id) }}" class="btn btn-primary a-btn-slide-text mr-2">
+                            <a href="{{ route('admin.brands.edit' , $brand->id) }}" class="btn btn-primary a-btn-slide-text mr-2">
                                 <i class="fas fa-edit"></i>
                             </a>
 
-                            <form action="{{ route('admin.products.destroy' , $brand->id) }}" method="POST">
+                            <form action="{{ route('admin.brands.destroy' , $brand->id) }}" method="POST">
                                 @method('post')
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">

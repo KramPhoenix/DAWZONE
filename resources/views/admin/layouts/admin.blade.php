@@ -113,7 +113,7 @@
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href=""><i class="fas fa-question"></i> FAQS</a>
+                            <a class="nav-link" href=" {{ route('admin.faqs.index') }} "><i class="fas fa-question"></i> FAQS</a>
                         </li>
 
                     </ul>

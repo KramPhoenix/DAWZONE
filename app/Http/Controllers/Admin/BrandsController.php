@@ -24,12 +24,12 @@ class BrandsController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->validate([
+        $request->validate([
             'nombre' => 'required|string|max:255',
         ]);
 
         $data = [
-            'name' => $input['nombre'],
+            'name' => $request['nombre'],
         ];
 
         $brand = Brand::create($data);
@@ -50,12 +50,12 @@ class BrandsController extends Controller
     {
         $brand = Brand::find($id);
 
-        $input = $request->validate([
+        $request->validate([
             'nombre' => 'required|string|max:255',
         ]);
 
         $data = [
-            'name' => $input['nombre'],
+            'name' => $request['nombre'],
         ];
 
         $brand->update($data);

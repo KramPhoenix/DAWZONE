@@ -15,8 +15,8 @@ class Faqs extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->boolean('description');
+            $table->string('question');
+            $table->longText('answer');
             $table->timestamps();
         });
     }

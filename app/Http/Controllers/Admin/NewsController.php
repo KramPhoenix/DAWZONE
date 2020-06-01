@@ -24,7 +24,7 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->validate([
+        $request->validate([
             'titulo' => 'required|string|max:255',
             'imagen' => 'required',
             'descripcion' => 'required|string|max:1000',
@@ -35,14 +35,14 @@ class NewsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/news/' , $nombreImagen);
-            $input['imagen'] = $nombreImagen;
+            $request['imagen'] = $nombreImagen;
         }
 
         $data = [
-            'image' => $input['imagen'],
-            'title' => $input['titulo'],
-            'description' => $input['descripcion'],
-            'link' => $input['url'],
+            'image' => $request['imagen'],
+            'title' => $request['titulo'],
+            'description' => $request['descripcion'],
+            'link' => $request['url'],
         ];
 
 
@@ -63,7 +63,8 @@ class NewsController extends Controller
     public function update($id, Request $request)
     {
         $news = News::find($id);
-        $input = $request->validate([
+
+        $request->validate([
             'titulo' => 'required|string|max:255',
             'descripcion' => 'required|string|max:1000',
             'url' => 'required|string|max:255'
@@ -73,20 +74,20 @@ class NewsController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = time().$imagen->getClientOriginalName();
             $imagen->move(public_path() . '/img/news/' , $nombreImagen);
-            $input['imagen'] = $nombreImagen;
+            $request['imagen'] = $nombreImagen;
 
             $data = [
-                'image' => $input['imagen'],
-                'title' => $input['titulo'],
-                'description' => $input['descripcion'],
-                'link' => $input['url'],
+                'image' => $request['imagen'],
+                'title' => $request['titulo'],
+                'description' => $request['descripcion'],
+                'link' => $request['url'],
             ];
 
         } else {
             $data = [
-                'title' => $input['titulo'],
-                'description' => $input['descripcion'],
-                'link' => $input['url'],
+                'title' => $request['titulo'],
+                'description' => $request['descripcion'],
+                'link' => $request['url'],
             ];
         }
 

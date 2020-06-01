@@ -25,7 +25,7 @@ class OffersController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->validate([
+        $request->validate([
             'nombre' => 'required|string|max:255',
             'inicio' => 'required|date',
             'final' => 'required|date|after:inicio',
@@ -34,21 +34,21 @@ class OffersController extends Controller
             'activo' => 'required',
         ]);
 
-        if (isset($input['descuento_valor'])){
+        if (isset($request['descuento_valor'])){
             $data = [
-                'name' => $input['nombre'],
-                'start' => $input['inicio'],
-                'end' => $input['final'],
-                'value_discount' => $input['descuento_valor'],
-                'active' => $input['activo'],
+                'name' => $request['nombre'],
+                'start' => $request['inicio'],
+                'end' => $request['final'],
+                'value_discount' => $request['descuento_valor'],
+                'active' => $request['activo'],
             ];
-        } else if(isset($input['descuento_porcentual'])) {
+        } else if(isset($request['descuento_porcentual'])) {
             $data = [
-                'name' => $input['nombre'],
-                'start' => $input['inicio'],
-                'end' => $input['final'],
-                'percentage_discount' => $input['descuento_porcentual'],
-                'active' => $input['activo'],
+                'name' => $request['nombre'],
+                'start' => $request['inicio'],
+                'end' => $request['final'],
+                'percentage_discount' => $request['descuento_porcentual'],
+                'active' => $request['activo'],
             ];
         }
 
@@ -71,7 +71,7 @@ class OffersController extends Controller
     {
         $offer = Offer::find($id);
 
-        $input = $request->validate([
+        $request->validate([
             'nombre' => 'required|string|max:255',
             'inicio' => 'required|date',
             'final' => 'required|date|after:inicio',
@@ -80,23 +80,23 @@ class OffersController extends Controller
             'activo' => 'required',
         ]);
 
-        if (isset($input['descuento_valor'])){
+        if (isset($request['descuento_valor'])){
             $data = [
-                'name' => $input['nombre'],
-                'start' => $input['inicio'],
-                'end' => $input['final'],
-                'value_discount' => $input['descuento_valor'],
+                'name' => $request['nombre'],
+                'start' => $request['inicio'],
+                'end' => $request['final'],
+                'value_discount' => $request['descuento_valor'],
                 'percentage_discount' => null,
-                'active' => $input['activo'],
+                'active' => $request['activo'],
             ];
-        } else if(isset($input['descuento_porcentual'])) {
+        } else if(isset($request['descuento_porcentual'])) {
             $data = [
-                'name' => $input['nombre'],
-                'start' => $input['inicio'],
-                'end' => $input['final'],
+                'name' => $request['nombre'],
+                'start' => $request['inicio'],
+                'end' => $request['final'],
                 'value_discount' => null,
-                'percentage_discount' => $input['descuento_porcentual'],
-                'active' => $input['activo'],
+                'percentage_discount' => $request['descuento_porcentual'],
+                'active' => $request['activo'],
             ];
         }
 

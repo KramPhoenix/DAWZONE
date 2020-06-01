@@ -9,7 +9,10 @@
             <div class="card card-default">
                 <div class="card-header">NUEVA MARCA</div>
                 <div class="card-body">
-                    <label for="titulo">Nombre:</label><input class="form-control mb-4" placeholder="Nombre de la marca" name="nombre" value="{{ old('nombre') }}">
+                    <div class="form-group">
+                        <label for="titulo">Nombre:</label>
+                        <input class="form-control" placeholder="Nombre de la marca" name="nombre" value="{{ old('nombre') }}">
+                    </div>
                 </div>
                 <div class="col-12 d-flex justify-content-end text-center mb-4">
                     <a href="{{ route('admin.brands.index') }}"><div class="btn btn-outline-danger mx-1">Cancelar</div></a>

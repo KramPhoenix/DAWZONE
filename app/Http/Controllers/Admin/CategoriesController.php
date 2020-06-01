@@ -24,12 +24,12 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->validate([
+        $request->validate([
             'nombre' => 'required|string|max:255',
         ]);
 
         $data = [
-            'name' => $input['nombre'],
+            'name' => $request['nombre'],
         ];
 
         $category = Category::create($data);
@@ -50,12 +50,12 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
 
-        $input = $request->validate([
+        $request->validate([
             'nombre' => 'required|string|max:255',
         ]);
 
         $data = [
-            'name' => $input['nombre'],
+            'name' => $request['nombre'],
         ];
 
         $category->update($data);

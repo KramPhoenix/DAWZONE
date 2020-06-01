@@ -2,11 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c658731-a0e0-4d4b-8c79-bca2537654fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/my_products.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/publicate_product.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/faqs/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/faqs/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/faqs/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/faqs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OffersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Faqs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Faqs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_24_185427_faqs.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_24_185427_faqs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_24_190114_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_24_190114_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/offers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/offers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/offers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/offers/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,17 +154,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/balneospauniforms.com-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\dawzone\app\Models" />
-      <recent name="D:\xampp\htdocs\dawzone\app\Http\Controllers\Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\dawzone\resources\views\admin\categories" />
       <recent name="D:\xampp\htdocs\dawzone\app\Http\Controllers\Admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\dawzone\app\Http\Controllers\Admin" />
+      <recent name="D:\xampp\htdocs\dawzone\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -170,7 +192,8 @@
       <workItem from="1590596789721" duration="10756000" />
       <workItem from="1590706318746" duration="29015000" />
       <workItem from="1590848436215" duration="1203000" />
-      <workItem from="1590876894724" duration="23284000" />
+      <workItem from="1590876894724" duration="24421000" />
+      <workItem from="1590965841061" duration="3781000" />
     </task>
     <servers />
   </component>
@@ -182,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="111" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1590358429969" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590918712077">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590966489579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1590918712077" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.54.1280.984@0.0.1920.1040" timestamp="1590966489579" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1590889665995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

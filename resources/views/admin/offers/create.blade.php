@@ -9,6 +9,7 @@
             <div class="card card-default">
                 <div class="card-header">NUEVA OFERTA</div>
                 <div class="card-body">
+
                     <div class="form-group">
                         <label for="nombre">Nombre: *</label>
                         <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre de la oferta">
@@ -76,6 +77,7 @@
                             <label class="form-check-label" for="activo2">No</label>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-12 d-flex justify-content-end text-center mb-4">
                     <a href="{{ route('admin.offers.index') }}"><div class="btn btn-outline-danger mx-1">Cancelar</div></a>

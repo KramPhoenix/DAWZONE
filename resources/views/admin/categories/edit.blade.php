@@ -9,7 +9,10 @@
             <div class="card card-default">
                 <div class="card-header">EDITAR CATEGORÍA ({{ $category->name }})</div>
                 <div class="card-body">
-                    <label for="titulo">Nombre:</label><input class="form-control mb-4" placeholder="Nombre de la categoría" name="nombre" value="{{ $category->name }}">
+                    <div class="form-group">
+                        <label for="titulo">Nombre:</label>
+                        <input class="form-control" placeholder="Nombre de la categoría" name="nombre" value="{{ $category->name }}">
+                    </div>
                 </div>
                 <div class="col-12 d-flex justify-content-end text-center mb-4">
                     <a href="{{ route('admin.categories.index') }}"><div class="btn btn-outline-danger mx-1">Cancelar</div></a>
