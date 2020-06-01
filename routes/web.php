@@ -19,17 +19,21 @@ Route::get('/news', 'NewsController@index')->name('news');
 
 Route::get('/cart}', 'CartController@index')->name('cart');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('product.addToCart');
+Route::get('/buy-now/{id}', 'CartController@buyNow')->name('product.buyNow');
 Route::get('/reduce-one-from-cart/{id}', 'CartController@reduceOneFromCart')->name('product.reduceOneFromCart');
 Route::get('/remove-from-cart/{id}', 'CartController@removeFromCart')->name('product.removeFromCart');
-Route::get('/orders/finished', 'OrdersController@storeOrder')->name('orders.storeOrder');
 
 
 Route::resource('categories', 'CategoriesController');
 Route::resource('products', 'ProductsController');
-Route::resource('orders', 'OrdersController');
-
-Route::get('/my-orders', 'OrdersController@myOrders')->name('orders.myOrders');
+Route::get('/add-to-favourite/{id}', 'ProductsController@addToFavourite')->name('product.addToFavourite');
 Route::get('/offers', 'ProductsController@offers')->name('offers');
+Route::get('/valuate/{id}', 'ProductsController@valuate')->name('product.valuate');
+Route::post('/add-valuation/{id}', 'ProductsController@addValuation')->name('product.addValuation');
+
+Route::resource('orders', 'OrdersController');
+Route::get('/my-orders', 'OrdersController@myOrders')->name('orders.myOrders');
+Route::get('/orders/finished', 'OrdersController@storeOrder')->name('orders.storeOrder');
 
 Auth::routes();
 

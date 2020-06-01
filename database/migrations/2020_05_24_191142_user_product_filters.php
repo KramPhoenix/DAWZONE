@@ -17,8 +17,9 @@ class UserProductFilters extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('product_id')->unsigned();
-            $table->boolean('favourite');
-            $table->boolean('wish');
+            $table->boolean('favourite')->default(0);
+            $table->integer('stars')->nullable();
+            $table->longText('valuation')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

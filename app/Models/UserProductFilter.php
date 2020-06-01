@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserProductFilter extends Model
 {
-    //
+    protected $fillable = [
+        'user_id', 'product_id', 'favourite', 'valuation', 'stars'
+    ];
 }

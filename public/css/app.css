@@ -10984,6 +10984,23 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
+section#welcome #last-offers h4 {
+  font-family: Owsald, sans-serif;
+  letter-spacing: 1px;
+}
+
+section#welcome #last-offers a {
+  text-decoration: none;
+  font-family: Owsald, sans-serif;
+  color: #070707;
+}
+
+div#category-title h4 {
+  font-family: Owsald, sans-serif;
+  color: #070707;
+  letter-spacing: 1px;
+}
+
 section#category a {
   color: #070707;
   text-decoration: none;

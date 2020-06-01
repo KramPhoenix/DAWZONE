@@ -16,6 +16,9 @@
                     <th scope="col" class="bg-light">
                         <div class="py-2 text-uppercase">Cantidad</div>
                     </th>
+                    <th scope="col" class="bg-light">
+                        <div class="py-2 text-uppercase">Acción</div>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,6 +35,7 @@
                         </th>
                         <td class="align-middle"><strong>{{ $order_product->price }}</strong></td>
                         <td class="align-middle"><strong>{{ $order_product->quantity }}</strong></td>
+                        <td class="align-middle"><a href=" {{ route('product.valuate', $product->id) }} "><button class="btn btn-dark">ESCRIBIR VALORACIÓN</button></a></td>
                     </tr>
                 @endforeach
                 </tbody>

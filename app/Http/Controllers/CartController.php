@@ -34,6 +34,21 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function buyNow(Request $request, $id){
+
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+
+        $request->session()->put('cart', $cart);
+        return view('cart', [
+            'products' => $cart->products,
+            'total_price' => $cart->total_price,
+            'total_quantity' => $cart->total_quantity
+        ]);
+    }
+
     public function reduceOneFromCart($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);

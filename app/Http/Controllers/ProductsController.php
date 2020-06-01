@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\UserProductFilter;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -87,8 +88,58 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function addToFavourite($product, $user){
 
+    public function addToFavourite($id){
+        $user = auth()->user();
+        $user_filters = UserProductFilter::where('user_id', '=', $user->id)->where('product_id', '=', $id)->first();
+
+        $data = [
+            'user_id' => $user->id,
+            'product_id' => $id,
+            'favourite' => 1,
+        ];
+
+        if ($user_filters) {
+            $user_filters->update($data);
+        } else {
+            UserProductFilter::create($data);
+        }
+
+        return redirect()->back();
+    }
+
+    public function valuate($id)
+    {
+        $product = Product::find($id);
+        return view('valuate', [
+            'product' => $product
+        ]);
+    }
+
+    public function addValuation(Request $request, $id)
+    {
+        $user = auth()->user();
+        $user_filters = UserProductFilter::where('user_id', '=', $user->id)->where('product_id', '=', $id)->first();
+
+        $request->validate([
+            'valoracion_g' => 'required',
+            'valoracion_p' => 'required',
+        ]);
+
+        $data = [
+            'user_id' => $user->id,
+            'product_id' => $id,
+            'valuation' => $request['valoracion_p'],
+            'stars' => $request['valoracion_g']
+        ];
+
+        if ($user_filters) {
+            $user_filters->update($data);
+        } else {
+            UserProductFilter::create($data);
+        }
+
+        return redirect()->route('orders.myOrders');
     }
 
 }
