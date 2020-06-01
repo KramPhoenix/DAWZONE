@@ -32,18 +32,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <form></form>
-                <div id="layout-search" class="input-group md-form form-sm form-2 pl-0">
-                    <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <span class="input-group-text lime lighten-2" id="basic-text1">
-                            <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                            </svg>
-                        </span>
+                <form class="w-50" action=" {{ route('product.searchProduct') }} " method="get">
+                    <div id="layout-search" class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control py-4 lime-border" name="producto" type="text" placeholder="Buscar" aria-label="Buscar">
+                        <div class="input-group-append">
+                            <span class="input-group-text lime lighten-2" id="basic-text1">
+                                <button class="bg-transparent border-0" type="submit"><i class="fas fa-search"></i></button>
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </form>
 
                 <div class="navbar" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

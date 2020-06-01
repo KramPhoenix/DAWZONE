@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\UserProductFilter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
@@ -24,16 +25,19 @@ class ProductsController extends Controller
 
     public function show($id)
     {
+        $user = auth()->user();
         $product = Product::find($id);
         $product_owner = User::find($product->owner_id);
-
+        $favourite = null;
         $product_brand = Brand::find($product->brand_id);
 
-        $user = auth()->user();
 
-        $valuations = UserProductFilter::where('product_id', '=', $id)->get();
 
-        $favourite = UserProductFilter::where('product_id', '=', $id)->where('user_id', '=', $user->id)->first();
+        $valuations = UserProductFilter::where('product_id', '=', $product->id)->get();
+
+        if (Auth::check()) {
+            $favourite = UserProductFilter::where('user_id', '=', $user->id)->where('product_id', '=', $product->id)->first();
+        }
 
         return view('product', [
             'product' => $product,
@@ -152,6 +156,19 @@ class ProductsController extends Controller
     {
         Product::destroy($id);
         return redirect()->route('products.index');
+    }
+
+    public function searchProduct(Request $request)
+    {
+
+       $product = Product::where('title', '=', $request['producto'])->first();
+
+       if ($product)
+       {
+           return redirect()->route('products.show', $product->id);
+       } else {
+           return redirect()->back();
+       }
     }
 
     public function offers(){

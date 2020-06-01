@@ -26,6 +26,7 @@ Route::get('/remove-from-cart/{id}', 'CartController@removeFromCart')->name('pro
 
 Route::resource('categories', 'CategoriesController');
 Route::resource('products', 'ProductsController');
+Route::get('/search', 'ProductsController@searchProduct')->name('product.searchProduct');
 Route::get('/add-to-favourite/{id}', 'ProductsController@addToFavourite')->name('product.addToFavourite');
 Route::get('/offers', 'ProductsController@offers')->name('offers');
 Route::get('/favourite', 'ProductsController@favourite')->name('product.favourite');

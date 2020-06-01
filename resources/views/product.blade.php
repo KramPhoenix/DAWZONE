@@ -10,10 +10,12 @@
             <div class="col-lg-6 product-data p-4">
                 <h2>{{ $product->title }}</h2>
                 <h6>{{ $product_brand->name }}</h6>
-                @if($favourite == null || $favourite->favourite == 0)
-                    <a href=" {{ route('product.addToFavourite', $product->id) }} "><p><i class="fas fa-star"></i> Añadir a Favoritos</p></a>
-                @else
-                    <p><i class="fas fa-star"></i> Añadido a Mis Favoritos</p>
+                @if(Auth::check())
+                    @if($favourite == null || $favourite->favourite == 0)
+                        <a href=" {{ route('product.addToFavourite', $product->id) }} "><p><i class="fas fa-star"></i> Añadir a Favoritos</p></a>
+                    @else
+                        <p><i class="fas fa-star"></i> Añadido a Mis Favoritos</p>
+                    @endif
                 @endif
                 <p> {{ $product->description }}</p>
                 <h4>@if($product->last_price > $product->price)<del>{{ $product->last_price }}€</del>@endif {{ $product->price }}€</h4>
