@@ -11,7 +11,13 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="titulo">Nombre:</label>
-                        <input class="form-control" placeholder="Nombre de la categoría" name="nombre" value="{{ old('nombre') }}">
+                        <input class="form-control @error('nombre') is-invalid @enderror" placeholder="Nombre de la categoría" name="nombre" value="{{ old('nombre') }}">
+
+                        @error('nombre')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-end text-center mb-4">

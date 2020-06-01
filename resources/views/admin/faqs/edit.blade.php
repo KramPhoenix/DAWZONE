@@ -12,12 +12,24 @@
 
                     <div class="form-group">
                         <label for="pregunta">Pregunta:</label>
-                        <input class="form-control" placeholder="Nombre de la categoría" name="pregunta" value="{{ $faq->question }}">
+                        <input class="form-control @error('pregunta') is-invalid @enderror" placeholder="Nombre de la categoría" name="pregunta" value="{{ $faq->question }}">
+
+                        @error('pregunta')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="respuesta">Respuesta:</label>
-                        <input class="form-control" placeholder="Nombre de la categoría" name="respuesta" value="{{ $faq->answer }}">
+                        <input class="form-control @error('respuesta') is-invalid @enderror" placeholder="Nombre de la categoría" name="respuesta" value="{{ $faq->answer }}">
+
+                        @error('respuesta')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                 </div>

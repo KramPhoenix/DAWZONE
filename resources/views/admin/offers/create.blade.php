@@ -67,7 +67,7 @@
 
                     <div class="form-group">
                         <legend class="col-form-label">Activa:</legend>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline @error('activo') is-invalid @enderror">
                             <input class="form-check-input" type="radio" name="activo" id="activo1" value="1">
                             <label class="form-check-label" for="activo1">Sí</label>
                         </div>
@@ -76,6 +76,12 @@
                             <input class="form-check-input" type="radio" name="activo" id="activo2" value="0">
                             <label class="form-check-label" for="activo2">No</label>
                         </div>
+
+                        @error('activo')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                 </div>

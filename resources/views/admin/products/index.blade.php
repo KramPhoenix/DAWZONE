@@ -26,7 +26,7 @@
                         <td>{{ $product->id }}</td>
                         <td>{{ $product->title }}</td>
                         <td><img class="img-fluid" width="40" height="40" src="/img/products/{{ $product->image }}"></td>
-                        <td>{{ $product->description }}</td>
+                        <td>{{ substr($product->description, 0, 40) }}... </td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->brand_id }}</td>
                         <td>{{ $product->category_id }}</td>

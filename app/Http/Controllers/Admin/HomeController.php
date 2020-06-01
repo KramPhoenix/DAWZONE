@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
-use App\Models\News;
 use App\Models\Offer;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 
@@ -19,12 +19,12 @@ class HomeController extends Controller
         $products = Product::all()->count();
         $brands = Brand::all()->count();
         $categories = Category::all()->count();
-        $news = News::all()->count();
+        $orders = Order::all()->count();
         $offers = Offer::all()->count();
 
         return view('admin.home', [
             'products' => $products,
-            'news' => $news,
+            'orders' => $orders,
             'users' => $users,
             'offers' => $offers,
             'brands' => $brands,

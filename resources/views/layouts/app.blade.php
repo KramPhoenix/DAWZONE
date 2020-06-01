@@ -32,6 +32,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <form></form>
                 <div id="layout-search" class="input-group md-form form-sm form-2 pl-0">
                     <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
@@ -55,11 +56,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"> <i class="fas fa-user"></i> {{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"> <i class="fas fa-id-card"></i> {{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -77,19 +78,19 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="fas fa-power-off"></i> {{ __('Logout') }}
                                     </a>
 
                                     <a class="dropdown-item" href=" {{ route('products.index') }} ">
-                                        Mis Productos
+                                        <i class="fas fa-box"></i> Mis Productos
                                     </a>
 
                                     <a class="dropdown-item" href=" {{ route('product.favourite') }} ">
-                                        Mis Favoritos
+                                        <i class="fas fa-star"></i> Mis Favoritos
                                     </a>
 
                                     <a class="dropdown-item" href=" {{ route('orders.myOrders') }} ">
-                                       Mis Pedidos
+                                        <i class="fas fa-truck"></i> Mis Pedidos
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -108,7 +109,7 @@
 
                 <li><div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorías
+                                <i class="fas fa-tag"></i> Categorías
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 @php $categories = \App\Models\Category::all() @endphp
@@ -117,12 +118,12 @@
                                 @endforeach
                             </div>
                         </div></li>
-                <li><a href="{{ route('news') }}">Notícias</a></li>
-                <li><a href="{{ route('offers') }}">Ofertas</a></li>
-                <li><a href="{{ route('faqs.index') }}">FAQS</a></li>
-                <li><a href="{{ route('contact.index') }}">Contacto</a></li>
+                <li><a href="{{ route('news') }}"><i class="fas fa-newspaper"></i> Notícias</a></li>
+                <li><a href="{{ route('offers') }}"><i class="fas fa-tag"></i> Ofertas</a></li>
+                <li><a href="{{ route('faqs.index') }}"><i class="fas fa-question"></i> FAQS</a></li>
+                <li><a href="{{ route('contact.index') }}"><i class="fas fa-phone"></i> Contacto</a></li>
                 @if(Auth::check())
-                    <li><a href=" {{ route('products.create') }} "><button class="btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>
+                    <li><a href=" {{ route('products.create') }} "><button class="btn btn-dark bg-transparent">PUBLICAR PRODUCTO</button></a></li>
                 @endif
             </ul>
         </nav>

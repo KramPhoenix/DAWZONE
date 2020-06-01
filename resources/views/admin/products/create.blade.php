@@ -12,27 +12,51 @@
 
                     <div class="form-group">
                         <label for="titulo">Título:</label>
-                        <input class="form-control" placeholder="Título del producto" name="titulo" value="{{ old('titulo') }}">
+                        <input class="form-control @error('titulo') is-invalid @enderror" placeholder="Título del producto" name="titulo" value="{{ old('titulo') }}">
+
+                        @error('titulo')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="imagen">Imagen:</label>
-                        <input type="file" class="form-control-file" name="imagen" value="">
+                        <input type="file" class="form-control-file @error('imagen') is-invalid @enderror" name="imagen" value="">
+
+                        @error('imagen')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="descripcion">Descripción:</label>
-                        <input class="form-control" placeholder="Descripción del producto" name="descripcion" value="{{ old('descripcion') }}">
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" rows="4" placeholder="Descripción del producto..." name="descripcion">{{ old('descripcion') }}</textarea>
+
+                        @error('descripcion')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="precio">Precio:</label>
-                        <input class="form-control" placeholder="Precio del producto" name="precio" value="{{ old('precio') }}">
+                        <input class="form-control @error('precio') is-invalid @enderror" placeholder="Precio del producto" name="precio" value="{{ old('precio') }}">
+
+                        @error('precio')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="marca">Marca: </label>
-                        <select class="form-control" name="marca">
+                        <select class="form-control @error('marca') is-invalid @enderror" name="marca">
                             <option selected disabled>Selecciona una marca...</option>
 
                             @foreach($brands as $brand)
@@ -40,11 +64,17 @@
                             @endforeach
 
                         </select>
+
+                        @error('marca')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="categoria">Categoría: </label>
-                        <select class="form-control" name="categoria">
+                        <select class="form-control @error('categoria') is-invalid @enderror" name="categoria">
                             <option selected disabled>Selecciona una categoría...</option>
 
                             @foreach($categories as $category)
@@ -52,6 +82,12 @@
                             @endforeach
 
                         </select>
+
+                        @error('categoria')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                 </div>

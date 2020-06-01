@@ -2,8 +2,8 @@
 
 @section('content')
     <section id="product" class="col-lg-12 d-flex flex-column align-items-center mt-5">
-        <div class="row bg-white d-flex justify-content-around mb-5">
-            <div class="col-lg-6">
+        <div class="row col-lg-10 bg-white d-flex justify-content-around mb-5">
+            <div class="col-lg-6 d-flex align-items-center justify-content-center">
                 <img class="border-dark" width="375px" height="375px" src="/img/products/{{ $product->image }}" alt="{{ $product->title }}">
             </div>
 
@@ -18,8 +18,8 @@
                     <button class="bg-transparent">@if($offer->value_discount != null) {{ $offer->value_discount }}€ DESC @else {{$offer->percentage_discount}}% DESC @endif</button>
                 @endif
                 <div class="buttons mt-5 d-flex">
-                    <a href="{{ route('product.addToCart', $product->id) }}"><button class="btn-dark p-2 mr-4">AÑADIR AL CARRITO</button></a>
-                    <a href="{{ route('product.buyNow', $product->id) }}"><button class="btn-dark p-2">COMPRAR AHORA</button></a>
+                    <a href="@if(Auth::check()) {{ route('product.addToCart', $product->id) }} @else {{ route('login') }} @endif"><button class="btn-dark p-2 mr-4">AÑADIR AL CARRITO</button></a>
+                    <a href="@if(Auth::check()) {{ route('product.buyNow', $product->id) }} @else {{ route('login') }} @endif"><button class="btn-dark p-2">COMPRAR AHORA</button></a>
                 </div>
             </div>
         </div>

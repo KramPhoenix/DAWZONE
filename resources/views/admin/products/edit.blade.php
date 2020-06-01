@@ -12,55 +12,97 @@
 
                     <div class="form-group">
                         <label for="titulo">Título:</label>
-                        <input class="form-control" placeholder="Título del producto" name="titulo" value="{{ $product->title }}">
+                        <input class="form-control @error('titulo') is-invalid @enderror" placeholder="Título del producto" name="titulo" value="{{ $product->title }}">
+
+                        @error('titulo')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="imagen">Imagen:</label>
-                        <input type="file" class="form-control-file" name="imagen">
+                        <input type="file" class="form-control-file @error('imagen') is-invalid @enderror" name="imagen">
+
+                        @error('imagen')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="descripcion">Descripción:</label>
-                        <input class="form-control" placeholder="Descripción del producto" name="descripcion" value="{{ $product->description }}">
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" rows="4" placeholder="Descripción del producto..." name="descripcion">{{ $product->description }}</textarea>
+
+                        @error('descripcion')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="precio">Precio:</label>
-                        <input class="form-control" placeholder="Precio del producto" name="precio" value="{{ $product->price }}">
+                        <input class="form-control @error('precio') is-invalid @enderror" placeholder="Precio del producto" name="precio" value="{{ $product->price }}">
+
+                        @error('precio')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="marca">Marca: </label>
-                        <select class="form-control" name="marca">
+                        <select class="form-control @error('marca') is-invalid @enderror" name="marca">
 
                             @foreach($brands as $brand)
                                 <option value="{{ $brand->id }}" @if( $brand->id == $product->brand_id) selected @endif> {{$brand->name}} </option>
                             @endforeach
 
                         </select>
+
+                        @error('marca')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="categoria">Categoría: </label>
-                        <select class="form-control" name="categoria">
+                        <select class="form-control @error('categoria') is-invalid @enderror" name="categoria">
 
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}" @if( $category->id == $product->category_id) selected @endif> {{$category->name}} </option>
                             @endforeach
 
                         </select>
+
+                        @error('categoria')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="oferta">Oferta: </label>
-                        <select class="form-control" name="oferta">
+                        <select class="form-control @error('oferta') is-invalid @enderror" name="oferta">
                             <option value="-1">SIN OFERTA</option>
                             @foreach($offers as $offer)
                                 <option value="{{ $offer->id }}" @if( $offer->id == $product->offer_id) selected @endif> {{$offer->name}} - @if($offer->value_discount != null) {{$offer->value_discount}} EUR @else {{$offer->percentage_discount}} % @endif  </option>
                             @endforeach
 
                         </select>
+
+                        @error('oferta')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                 </div>

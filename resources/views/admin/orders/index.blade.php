@@ -7,7 +7,7 @@
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">CANTIDAD PRODUCTOS</th>
+                <th scope="col">CANTIDAD DE PRODUCTOS</th>
                 <th scope="col">PRECIO TOTAL</th>
                 <th scope="col">ID CLIENTE</th>
                 <th scope="col">ACCIONES</th>

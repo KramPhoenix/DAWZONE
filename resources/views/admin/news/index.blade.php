@@ -21,7 +21,7 @@
                 <tr>
                     <td>{{ $new->id }}</td>
                     <td>{{ $new->title }}</td>
-                    <td>{{ $new->description }}</td>
+                    <td>{{ substr($new->description, 0, 155) }}...</td>
                     <td>{{ $new->link }}</td>
                     <td class="d-flex">
                         <a href="{{ route('admin.news.edit' , $new->id) }}" class="btn btn-primary a-btn-slide-text mr-2">

@@ -23,12 +23,12 @@
                 </div>
 
                 <div class="col-lg-2 d-flex flex-column justify-content-around align-items-center p-2 border-right border-bottom border-top border-dark">
-                    <a href="{{ route('orders.show', $order->id) }}"><button class="btn-dark rounded-pill">VER PRODUCTOS</button></a>
+                    <a href="{{ route('orders.show', $order->id) }}"><button class="btn btn-dark">VER PRODUCTOS</button></a>
                     <form action="{{ route('orders.destroy' , $order->id) }}" method="POST">
                         @method('post')
                         @csrf
                         <input name="_method" type="hidden" value="DELETE">
-                        <button type="submit" class="btn-dark rounded-pill">DEVOLVER PEDIDO</button>
+                        <button type="submit" class="btn btn-dark">DEVOLVER PEDIDO</button>
                     </form>
                 </div>
             </div>

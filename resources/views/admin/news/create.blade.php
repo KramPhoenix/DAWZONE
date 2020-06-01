@@ -12,22 +12,46 @@
 
                     <div class="form-group">
                         <label for="titulo">Título:</label>
-                        <input class="form-control" placeholder="Título de la notícia" name="titulo" value="{{ old('titulo') }}">
+                        <input class="form-control @error('titulo') is-invalid @enderror" placeholder="Título de la notícia" name="titulo" value="{{ old('titulo') }}">
+
+                        @error('titulo')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="imagen">Imagen:</label>
-                        <input type="file" class="form-control-file" name="imagen" value="">
+                        <input type="file" class="form-control-file @error('imagen') is-invalid @enderror" name="imagen" value="">
+
+                        @error('imagen')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="descripcion">Descripción:</label>
-                        <textarea class="form-control" placeholder="Descripción de la notícia..." rows="3" name="descripcion">{{ old('descripcion') }}</textarea>
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" placeholder="Descripción de la notícia..." rows="3" name="descripcion">{{ old('descripcion') }}</textarea>
+
+                        @error('descripcion')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="titulo">URL:</label>
-                        <input class="form-control" placeholder="Link de la notícia" name="url" value="{{ old('url') }}">
+                        <label for="url">URL:</label>
+                        <input class="form-control @error('url') is-invalid @enderror" placeholder="Link de la notícia" name="url" value="{{ old('url') }}">
+
+                        @error('url')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
                 </div>
