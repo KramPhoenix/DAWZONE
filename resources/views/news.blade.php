@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="p-4">
+    <div id="noticias" class="p-4">
         @foreach($news as $new)
         <a href="{{ $new->link }}">
             <div class="card mb-4">

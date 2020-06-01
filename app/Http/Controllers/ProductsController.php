@@ -27,9 +27,12 @@ class ProductsController extends Controller
 
         $product_brand = Brand::find($product->brand_id);
 
+        $valuations = UserProductFilter::where('product_id', '=', $id)->get();
+
         return view('product', [
             'product' => $product,
-            'product_brand' => $product_brand
+            'product_brand' => $product_brand,
+            'valuations' => $valuations
         ]);
     }
 

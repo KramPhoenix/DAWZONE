@@ -11,7 +11,7 @@
     <div class="p-4">
         @foreach($orders as $order)
             <div class="d-flex justify-content-center mb-4">
-                <div class="col-lg-6">
+                <div class="col-lg-6 border-left border-top border-bottom border-dark">
                     <div class="bg-light rounded-pill px-2 py-2 text-uppercase font-weight-bold">Detalles del pedido (ID: {{ $order->id }}) </div>
                     <div class="p-2">
                         <ul class="list-unstyled mb-4">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 d-flex flex-column justify-content-around align-items-center p-2">
+                <div class="col-lg-2 d-flex flex-column justify-content-around align-items-center p-2 border-right border-bottom border-top border-dark">
                     <a href="{{ route('orders.show', $order->id) }}"><button class="btn-dark rounded-pill">VER PRODUCTOS</button></a>
                     <form action="{{ route('orders.destroy' , $order->id) }}" method="POST">
                         @method('post')

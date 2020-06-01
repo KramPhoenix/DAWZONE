@@ -11006,6 +11006,11 @@ section#category a {
   text-decoration: none;
 }
 
+div#noticias a {
+  text-decoration: none;
+  color: #070707;
+}
+
 section#product .product-data del {
   color: #C4C4C4;
 }

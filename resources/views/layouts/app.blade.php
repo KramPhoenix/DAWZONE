@@ -84,6 +84,10 @@
                                         Mis Productos
                                     </a>
 
+                                    <a class="dropdown-item" href=" ">
+                                        Mis Favoritos
+                                    </a>
+
                                     <a class="dropdown-item" href=" {{ route('orders.myOrders') }} ">
                                        Mis Pedidos
                                     </a>
